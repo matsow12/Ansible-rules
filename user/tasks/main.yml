@@ -1,0 +1,22 @@
+---
+- name: ADD group
+  group:
+    name: panda
+    state: present
+
+- name: Add user
+  user:
+    name: panda
+    shell: /bin/bash
+    groups: 
+     - panda
+     - sudo
+    
+  
+
+- name: Add ssh_key
+  authorized_key:
+    user: panda
+    state: present
+    key: "{{ lookup('file', '/home/vagrant/.ssh/authorized_keys') }}"
+
