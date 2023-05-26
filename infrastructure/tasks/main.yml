@@ -14,7 +14,7 @@
         state: present
    
     - name: Pull repo
-        git:
+      git:
           dest: "{{deployment_path}}"
           repo: "{{git_repository}}"
           version: "{{git_branch}}"
