@@ -16,7 +16,7 @@
     
 - name: Launch compose
   docker_compose:    
-    project_scr: "{{ deployment_path }}"
+    project_src: "{{ deployment_path }}"
     build: true
     debug: true
 
