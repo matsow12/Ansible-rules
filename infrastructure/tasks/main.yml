@@ -12,6 +12,8 @@
     dest: "{{deployment_path}}"
     repo: "{{git_repository}}"
     version: "{{git_branch}}"
+    
+    
 - name: Launch compose
   docker.compose:
     build: true
