@@ -1,4 +1,4 @@
 ---
-deployment_path: ~/Infrastructure
+deployment_path: "~/Infrastructure"
 git_repository: "https://github.com/matsow12/Infrastructure"
 git_branch: "main"
