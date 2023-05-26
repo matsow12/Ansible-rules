@@ -1,29 +1,22 @@
 ---
 
-- name: Install and pull
-  hosts: all
-  become: true
-  
-
-  tasks:
-          - name : Install docker & docker-compose
-            pip:
-              name: 
-                - docker
-                - docker-compose
-              state: present
-          
-          - name: Pull repo
-            git:
-              dest: "{{deployment_path}}"
-              repo: "{{git_repository}}"
-              version: "{{git_branch}}"
-
-          - name: Launch compose
-            docker.compose:
-              build: true
-              project_scr: "{{deployment_path}}"
-              debug: true
+- name : Install docker & docker-compose
+  pip:
+    name: 
+      - docker
+      - docker-compose
+    state: present
+    
+- name: Pull repo 
+  git:
+    dest: "{{deployment_path}}"
+    repo: "{{git_repository}}"
+    version: "{{git_branch}}"
+- name: Launch compose
+  docker.compose:
+    build: true
+    project_scr: "{{deployment_path}}"
+    debug: true
 
 
     
