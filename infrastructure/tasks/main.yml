@@ -9,15 +9,15 @@
     
 - name: Pull repo 
   git:
-    dest: "{{deployment_path}}"
-    repo: "{{git_repository}}"
-    version: "{{git_branch}}"
+    dest: "{{ deployment_path }}"
+    repo: "{{ git_repository }}"
+    version: "{{ git_branch }}"
     
     
 - name: Launch compose
   docker_compose:
     build: true
-    project_scr: "{{deployment_path}}"
+    project_scr: "{{ deployment_path }}"
     debug: true
 
 
