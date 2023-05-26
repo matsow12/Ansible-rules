@@ -15,7 +15,7 @@
     
     
 - name: Launch compose
-  docker.compose:
+  community.docker.docker.compose:
     build: true
     project_scr: "{{deployment_path}}"
     debug: true
